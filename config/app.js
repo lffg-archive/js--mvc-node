@@ -1,5 +1,8 @@
 module.exports = {
-  'base_dir': '{{dir}}',
+  'base_path': '{{path}}',
+
   'view engine': 'pug',
-  'views': '{{dir}}/app/views'
+  'views': '{{path}}/app/views',
+
+  'session-secret-key': '_kss'
 };

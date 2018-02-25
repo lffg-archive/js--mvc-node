@@ -1,9 +1,12 @@
-module.exports = class Form {
+module.exports = class Form extends Controller {
   index(req, res) {
     res.render('pages/form');
   }
 
   submit(req, res) {
-    res.render('pages/form', { data: req.body });
+    const model = new (this.model('Form'))();
+    const html = model.getHTML(req.body.firstName, req.body.lastName);
+
+    res.render('pages/form', { html });
   }
 };

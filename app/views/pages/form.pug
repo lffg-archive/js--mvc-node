@@ -11,14 +11,8 @@ html(lang="en")
   body
     h1 Form <small>(Test)</small>
 
-    - if (data)
-      p
-        strong Your data:
-      p First Name: <strong>#{data.firstName || 'Uninformed'}</strong>
-      p Last Name: <strong>#{data.lastName || 'Uninformed'}</strong>
-      div
-        p JSON:
-        pre #{JSON.stringify(data)}
+    if (html)
+      div!= html
       hr
 
     form(method="post")
