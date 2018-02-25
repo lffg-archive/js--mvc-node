@@ -7,7 +7,7 @@ Estrutura MVC para a criação de aplicações web em um ambiente [NodeJS](https
 A aplicação foi desenvolvida com as seguintes versões:
 
 * NodeJS `8.9.3`;
-* NPM `5.5.1`;
+* NPM `5.6.0`;
 * As demais dependências podem ser consultadas no arquivo [`package.json`](https://github.com/lffg/mvc-node/blob/master/package.json).
 
 ### Documentação
