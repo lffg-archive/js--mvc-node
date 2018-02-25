@@ -1,15 +1,27 @@
-const Helmet = require('helmet');
+/**
+ * Module dependencies.
+ */
+const helmet = require('helmet');
+const parser = require('body-parser');
 
+/**
+ * This module aims to add global generic middlewares.
+ */
 module.exports = () => {
   /**
-   * Add Helmet middleware.
+   * Sets the helmet middleware.
    */
-  app.use(Helmet());
+  app.use(helmet());
 
   /**
-   * Set
+   * Sets the static content.
    */
-  app.use('/assets', express.static(`${app.get('base_dir')}/assets`));
+  app.use(express.static(`${app.get('base_dir')}/public`));
+
+  /**
+   * Sets the body parser middleware.
+   */
+  app.use(parser.urlencoded({ extended: true }));
 
   /**
    * Add X-Powered-By
