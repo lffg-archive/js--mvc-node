@@ -56,7 +56,7 @@ module.exports = [
 
   /** About page. */
   {
-    path: '/about',
+    path: /^\/about$/, /** Regex is also supported. */
     callback: (req, res) => {
       res.send('About page.');
     }
