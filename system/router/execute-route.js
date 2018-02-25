@@ -52,6 +52,14 @@ module.exports = function(routePath, routeMethod, routeExecutor) {
       /** 
        * Performs the current action in the context of the controller.
        */
+      if (! controllerInstance[controller.action]) {
+        throw new Error(`The ${controller.action} action of the ${controller.name} controller does not exist.`);
+      }
+
+      if (typeof(controllerInstance[controller.action]) !== 'function') {
+        throw new Error(`The ${controller.action} action of the ${controller.name} controller is not valid.`);
+      }
+
       try {
         controllerInstance[controller.action](req, res, next);
       } catch (e) {
