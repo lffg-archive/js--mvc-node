@@ -5,7 +5,8 @@
   },
   "globals": {
     "app": true,
-    "express": true
+    "express": true,
+    "xss": true
   },
   "extends": "eslint:recommended",
   "rules": {
