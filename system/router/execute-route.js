@@ -43,7 +43,7 @@ module.exports = function(routePath, routeMethod, routeExecutor) {
        */
       let controllerInstance;
       try {
-        controllerInstance = require(`../../app/controllers/${controller.name}.js`);
+        controllerInstance = require(`${app.get('base_path')}/app/controllers/${controller.name}.js`);
       } catch (e) {
         throw new Error(`The ${controller.name} controller wasn't found.`);
       }
@@ -55,7 +55,7 @@ module.exports = function(routePath, routeMethod, routeExecutor) {
       try {
         controllerInstance[controller.action](req, res, next);
       } catch (e) {
-        throw new Error(`The controller ${controller.name} does not have the ${controller.action} action.`);
+        throw new Error(`[Error : ${controller.name} : ${controller.action}] ${e}`);
       }
   
       return true;

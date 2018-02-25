@@ -7,7 +7,7 @@ module.exports = function() {
   /**
    * It requires the routes and the module to execute them.
    */
-  const routes = require('../../app/routes');
+  const routes = require(`${app.get('base_path')}/app/routes`);
   const executeRoute = require('./execute-route');
 
   /**
