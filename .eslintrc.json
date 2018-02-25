@@ -9,6 +9,12 @@
   },
   "extends": "eslint:recommended",
   "rules": {
+    "no-else-return": [
+      "error",
+      {
+        "allowElseIf": true
+      }
+    ],
     "no-console": "off",
     "no-extra-boolean-cast": "off",
     "indent": [
